@@ -5,7 +5,7 @@ namespace MyProject\Core;
 class App
 {
     private static $aRegistry = [];
-    
+   
     public static function bind($key, $val)
     {
         self::$aRegistry[$key] = $val;

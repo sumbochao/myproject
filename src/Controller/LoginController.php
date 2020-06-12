@@ -8,13 +8,11 @@ class LoginController
 {
     public function loadView()
     {
-        view('login');
+        include "views/login.php";
     }
     
     public function handleLogin()
     {
-        if (LoginModel::isLoggedIn($_POST['username'], $_POST['password'])) {
-        
-        }
+        var_export($_POST);die;
     }
 }

@@ -1,9 +1,12 @@
 <?php
+
+use MyProject\Core\URL;
+
 require_once "header.php";
 require_once "navigation.php";
 ?>
     <div id="content">
-        <form class="ui form" method="post" action="http://127.0.0.1:8888/dev.php.com/myproject/handlelogin">
+        <form class="ui form" method="POST" action="<?php echo URL::uri('login'); ?>">
             <div class="fields three">
                 <div class="field">
                     <label for="login-username">Username / Email</label>
