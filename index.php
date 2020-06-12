@@ -5,5 +5,5 @@ session_start();
 
 define('ASBPATH', dirname(__FILE__));
 define('DS', '/');
-
+var_export($_GET);die;
 require_once "./src/Core/Bootstrap.php";
