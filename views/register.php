@@ -1,16 +1,17 @@
 <?php
 require_once "header.php";
 require_once "navigation.php";
+use MyProject\Core\URL;
 ?>
     <div id="content">
         
-        <?php if (isset($_SESSION['error'])): ?>
+        <?php if (isset($_SESSION['register-error'])): ?>
         <div class="ui segment">
-            <?php echo $_SESSION['error']; ?>
+            <?php echo $_SESSION['register-error']; ?>
         </div>
         <?php endif; ?>
         
-        <form class="ui form" method="post" action="register.php">
+        <form class="ui form" method="post" action="<?php echo URL::uri('register');?>">
             <div class="fields three">
                 <div class="field">
                     <label for="reg-username">Username</label>
