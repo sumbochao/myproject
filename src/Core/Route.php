@@ -91,8 +91,9 @@ class Route
      *
      * @return bool
      */
-    protected function isRouteExists($route): bool
+    protected function isRouteExists($route)
     {
+
         if (isset($this->aRouter[$this->requestMethod][$route])) {
             $this->currentRawController = $this->aRouter[$this->requestMethod][$route];
 
@@ -152,10 +153,5 @@ class Route
             $aParseRoute=['MyProject\Controller\PageNotFound','loadView'];
             $this->callAction($aParseRoute[0],$aParseRoute[1]);
         }
-    }
-
-    public static function test()
-    {
-        var_dump(self::generateRegex());die();
     }
 }

@@ -6,14 +6,14 @@ namespace MyProject\Controller;
 
 use MyProject\Core\Request;
 use MyProject\Core\URL;
-use MyProject\Model\User;
+use MyProject\Model\UserModel;
 
 class ManagerController
 {
     public static function deleteUser()
     {
         $id = Request::uri()[1];
-        if (User::deleteUser($id)) {
+        if (UserModel::deleteUser($id)) {
             $_SESSION['islogin'] = 'admin';
             header('location:' . URL::uri('home'));
         }
@@ -33,7 +33,7 @@ class ManagerController
     {
         $data = $_POST;
         $data['password'] = md5($_POST['password']);
-        if (User::updateUser($data)) {
+        if (UserModel::updateUser($data)) {
             $_SESSION['islogin']='admin';
             header('location:'.URL::uri('home'));
         }
@@ -43,11 +43,11 @@ class ManagerController
     {
         $data = $_POST;
         $data['password'] = md5($_POST['password']);
-        if (User::isUserExists($data['username'])[0] || User::isUserExists($data['gmail'])[0]) {
+        if (UserModel::isUserExists($data['username'])[0] || UserModel::isUserExists($data['gmail'])[0]) {
             $_SESSION['erroradd'] = 'user or email da ton tai';
             header('location:' . URL::uri('add'));
         } else {
-            if (User::insert($data)) {
+            if (UserModel::insert($data)) {
                 $_SESSION['islogin'] = 'admin';
                 header('location:' . URL::uri('home'));
             }

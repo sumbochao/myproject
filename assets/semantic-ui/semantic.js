@@ -5072,7 +5072,7 @@ $.fn.dropdown = function(parameters) {
                 if( settings.onNoResults.call(element, searchTerm) ) {
                   if(settings.allowAdditions) {
                     if(settings.hideAdditions) {
-                      module.verbose('User addition with no menu, setting empty style');
+                      module.verbose('UserModel addition with no menu, setting empty style');
                       module.set.empty();
                       module.hideMenu();
                     }
@@ -7001,7 +7001,7 @@ $.fn.dropdown = function(parameters) {
             $label = settings.onLabelCreate.call($label, escapedValue, text);
 
             if(module.has.label(value)) {
-              module.debug('User selection already exists, skipping', escapedValue);
+              module.debug('UserModel selection already exists, skipping', escapedValue);
               return;
             }
             if(settings.label.variation) {
@@ -16135,11 +16135,11 @@ $.fn.sidebar = function(parameters) {
               clickedContext  = ($context.is(event.target))
             ;
             if(clickedInPusher) {
-              module.verbose('User clicked on dimmed page');
+              module.verbose('UserModel clicked on dimmed page');
               module.hide();
             }
             if(clickedContext) {
-              module.verbose('User clicked on dimmable context (scaled out page)');
+              module.verbose('UserModel clicked on dimmable context (scaled out page)');
               module.hide();
             }
           },

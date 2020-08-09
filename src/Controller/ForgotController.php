@@ -5,7 +5,7 @@ namespace MyProject\Controller;
 
 
 use MyProject\Core\URL;
-use MyProject\Model\User;
+use MyProject\Model\UserModel;
 
 
 class ForgotController
@@ -23,8 +23,8 @@ class ForgotController
     public function forgot()
     {
         $email = $_POST['email'];
-        if (User::isUserExists($email)[0]) {
-            $_SESSION['id']= User::isUserExists($email)[1]['id'];
+        if (UserModel::isUserExists($email)[0]) {
+            $_SESSION['id']= UserModel::isUserExists($email)[1]['MaKH'];
             header('location:'.URL::uri('repass'));
 
         } else {
@@ -37,7 +37,7 @@ class ForgotController
     {
         $data=$_POST;
         $data['pass']=md5($_POST['pass']);
-        if (User::updatePass($data)){
+        if (UserModel::updatePass($data)){
             $_SESSION['islogin1']='Password da cap nhat';
             header('location:'.URL::uri('login'));
         }

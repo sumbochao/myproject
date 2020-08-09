@@ -462,7 +462,7 @@ select.ui.dropdown {
   word-wrap: normal;
 }
 
-/* User Item */
+/* UserModel Item */
 .ui.selection.dropdown .menu > .hidden.addition.item {
   display: none;
 }
@@ -1511,6 +1511,6 @@ select.ui.dropdown {
 
 
 /*******************************
-        User Overrides
+        UserModel Overrides
 *******************************/
 

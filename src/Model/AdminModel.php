@@ -119,7 +119,7 @@ class AdminModel
         return DB::makeConnection()->query("DELETE FROM loai where MaLoai='" . $id . "'");
     }
 
-    //User
+    //UserModel
     public static function selectAllUser()
     {
         return DB::makeConnection()->query('SELECT * FROM khachhang');

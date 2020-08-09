@@ -4,48 +4,60 @@
 namespace MyProject\Model;
 
 
-use MyProject\Database\QueryBuilder;
+use MyProject\Core\URL;
+use MyProject\Database\DB;
 
 class UserModel
 {
     public static function isUserExists($usernameOrEmail)
     {
-        //SELECT * FROM user Where username='' or email='' and password='';
-        $aUserInfo = QueryBuilder::table('user')
-            ->select('email', 'username') // tra ve ('email','username')
-            ->where('email', $usernameOrEmail)
-            ->orWhere('username', $usernameOrEmail)
-            ->first();
-        return $aUserInfo;
+        $oCheck = DB::makeConnection()->query("SELECT * FROM khachhang WHERE TenKH='" . $usernameOrEmail . "' 
+        OR email='" . $usernameOrEmail . "'");
+
+        return [$oCheck->num_rows > 0, $oCheck->fetch_assoc()];
     }
 
-    public static function createUser($username, $email, $password)
+    public static function insert($data)
     {
-        $password = md5($password);
-
-        $status = QueryBuilder::table('user')
-            ->insert([
-                'username' => $username,
-                'email' => $email,
-                'password' => $password
-            ]);
-
-        if (!$status) {
-            return $status;
-        }
-
-        return QueryBuilder::getId();
+        $sql = sprintf(
+            "INSERT INTO khachhang(%s) VALUES(%s)",
+            implode(',', array_keys($data)),
+            '"' . implode('","', array_values($data)) . '"');
+        $oCheck = DB::makeConnection()->query($sql);
+        return $oCheck;
     }
 
-    public static function getUserById($userId)
+    public static function SelectAll()
     {
-        return QueryBuilder::table('user')
-            ->where('ID', $userId)
-            ->first();
+        $oCheck = DB::makeConnection()->query("SELECT id,username,email FROM khachhang ");
+        return $oCheck;
     }
 
-    public static function loginUser()
+    public static function getAddUser($id)
     {
-
+        $oCheck = DB::makeConnection()->query("SELECT id,username,email,password FROM khachhang where id='" . $id . "'");
+        return $oCheck;
     }
+
+    public static function deleteUser($id)
+    {
+        $oDelete = DB::makeConnection()->query("DELETE FROM khachhang WHERE id='" . $id . "'");
+        return $oDelete;
+    }
+
+    public static function updateUser($data)
+    {
+        $oUpdate = DB::makeConnection()->query("UPDATE khachhang SET id='" . $data['id'] . "',username='" . $data['username'] . "',
+        email='" . $data['email'] . "',password='" . $data['password'] . "'
+         WHERE id='" . $data['id'] . "'");
+        return $oUpdate;
+    }
+
+    public static function updatePass($data)
+    {
+        $oUpDate=DB::makeConnection()->query("UPDATE khachhang SET password='" . $data['pass'] . "' 
+        WHERE MaKH='" . $data['id'] . "' ");
+        return $oUpDate;
+    }
+
 }

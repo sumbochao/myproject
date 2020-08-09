@@ -7,4 +7,3 @@ define('ASBPATH', dirname(__FILE__));
 define('DS', '/');
 //require_once"CreateTable.php";
 require_once "./src/Core/Bootstrap.php";
-

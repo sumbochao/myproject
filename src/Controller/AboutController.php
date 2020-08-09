@@ -8,6 +8,6 @@ class AboutController
 {
     public function loadview()
     {
-        require_once 'views/about.php';
+        require_once 'views/HomeShop/right/about.php';
     }
 }

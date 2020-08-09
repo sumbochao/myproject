@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="profile-img">
-                    <img src="http://127.0.0.1:8080/myproject/assets/uploads19-07-2020/vuong.jpg" alt=""/>
+                    <img src="http://127.0.0.1:8080/myproject/assets/ad.jpg" style="width: 250px;height: 250px;" alt=""/>
                 </div>
             </div>
             <div class="col-md-6">

@@ -29,7 +29,7 @@
 <head>
     <head>
         <meta charset="utf-8" />
-        <title>Hướng dẫn sử dụng cPanel</title>
+        <title>404</title>
         <meta name="author" content="cPanel edu" />
         <meta name="keywords" content="Hướng dẫn sử dụng cPanel, các lỗi thường gặp khi sử dụng cPanel" />
         <meta name="description" content="Hướng dẫn sử dụng cPanel, các lỗi thường gặp khi sử dụng cPanel" />
@@ -100,7 +100,7 @@
                 text-decoration: none;
                 margin-right: 10px
             }
-            .right{
+            .fright{
                 float:right;
                 width:60%;
             }

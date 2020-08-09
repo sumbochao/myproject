@@ -17206,7 +17206,7 @@ ol.ui.horizontal.list li:before,
 *******************************/
 
 /*******************************
-    User Variable Overrides
+    UserModel Variable Overrides
 *******************************/
 /*!
  * # Semantic UI 2.4.0 - Loader
@@ -28066,7 +28066,7 @@ Floated Menu / Item
 *******************************/
 
 /*******************************
-    User Variable Overrides
+    UserModel Variable Overrides
 *******************************/
 /*!
  * # Semantic UI 2.4.0 - Item
@@ -29173,7 +29173,7 @@ a.ui.card:hover,
 *******************************/
 
 /*******************************
-    User Variable Overrides
+    UserModel Variable Overrides
 *******************************/
 /*!
  * # Semantic UI 2.4.0 - Comment
@@ -29332,7 +29332,7 @@ a.ui.card:hover,
 }
 
 /*--------------------
-     User Actions
+     UserModel Actions
 ---------------------*/
 
 .ui.comments .comment .actions {
@@ -29459,7 +29459,7 @@ a.ui.card:hover,
 *******************************/
 
 /*******************************
-    User Variable Overrides
+    UserModel Variable Overrides
 *******************************/
 /*!
  * # Semantic UI 2.4.0 - Feed
@@ -29615,7 +29615,7 @@ a.ui.card:hover,
 }
 
 /*--------------
-      User
+      UserModel
 ---------------*/
 
 .ui.feed > .event > .content .user {
@@ -29772,7 +29772,7 @@ a.ui.card:hover,
 *******************************/
 
 /*******************************
-    User Variable Overrides
+    UserModel Variable Overrides
 *******************************/
 /*!
  * # Semantic UI 2.4.0 - Item
@@ -30293,7 +30293,7 @@ a.ui.card:hover,
 *******************************/
 
 /*******************************
-    User Variable Overrides
+    UserModel Variable Overrides
 *******************************/
 /*!
  * # Semantic UI 2.4.0 - Statistic
@@ -30925,7 +30925,7 @@ a.ui.card:hover,
 *******************************/
 
 /*******************************
-    User Variable Overrides
+    UserModel Variable Overrides
 *******************************/
 /*!
  * # Semantic UI 2.4.0 - Accordion
@@ -31188,7 +31188,7 @@ a.ui.card:hover,
 }
 
 /*******************************
-        User Overrides
+        UserModel Overrides
 *******************************/
 /*!
  * # Semantic UI 2.4.0 - Checkbox
@@ -32128,7 +32128,7 @@ body.dimmable > .dimmer {
 *******************************/
 
 /*******************************
-        User Overrides
+        UserModel Overrides
 *******************************/
 /*!
  * # Semantic UI 2.4.0 - Dropdown
@@ -32616,7 +32616,7 @@ select.ui.dropdown {
   word-wrap: normal;
 }
 
-/* User Item */
+/* UserModel Item */
 
 .ui.selection.dropdown .menu > .hidden.addition.item {
   display: none;
@@ -33786,7 +33786,7 @@ select.ui.dropdown {
 */
 
 /*******************************
-        User Overrides
+        UserModel Overrides
 *******************************/
 /*!
  * # Semantic UI 2.4.0 - Video
@@ -34783,7 +34783,7 @@ a.ui.nag {
 *******************************/
 
 /*******************************
-        User Overrides
+        UserModel Overrides
 *******************************/
 /*!
  * # Semantic UI 2.4.0 - Popup
@@ -35613,7 +35613,7 @@ a.ui.nag {
 *******************************/
 
 /*******************************
-        User Overrides
+        UserModel Overrides
 *******************************/
 /*!
  * # Semantic UI 2.4.0 - Progress Bar
@@ -36346,7 +36346,7 @@ a.ui.nag {
 }
 
 /*-------------------
-   User Interactive
+   UserModel Interactive
 --------------------*/
 
 /* Selected Rating */
@@ -37104,7 +37104,7 @@ a.ui.nag {
 *******************************/
 
 /*******************************
-        User Overrides
+        UserModel Overrides
 *******************************/
 /*!
  * # Semantic UI 2.4.0 - Sidebar
@@ -37951,7 +37951,7 @@ body.pushable > .pusher {
 *******************************/
 
 /*******************************
-        User Overrides
+        UserModel Overrides
 *******************************/
 /*!
  * # Semantic UI 2.4.0 - Transition

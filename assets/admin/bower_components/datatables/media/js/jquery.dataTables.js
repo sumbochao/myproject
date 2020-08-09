@@ -625,7 +625,7 @@
 			}
 		}
 	
-		/* User specified column options */
+		/* UserModel specified column options */
 		if ( oOptions !== undefined && oOptions !== null )
 		{
 			// Backwards compatibility

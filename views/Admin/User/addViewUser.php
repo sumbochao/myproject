@@ -33,6 +33,10 @@ if (!isset($_SESSION['login_true'])) {
                         <input class="form-control" name="Email" required/>
                     </div>
                     <div class="form-group">
+                        <label>Địa Chỉ</label>
+                        <input class="form-control" name="text" required/>
+                    </div>
+                    <div class="form-group">
                         <label>Số Điện Thoại</label>
                         <input class="form-control" name="SDT" required/>
                     </div>

@@ -13,16 +13,7 @@ if (!isset($_SESSION['login_true'])) {
     <!-- Page Content -->
     <div id="page-wrapper">
         <div class="container-fluid">
-<!--            --><?php //if (isset($_SESSION['success_updateType'])): ?>
-<!--                <div class="alert-success">-->
-<!--                    --><?php //echo $_SESSION['success_updateType']; ?>
-<!--                </div>-->
-<!--            --><?php //endif; ?>
-<!--            --><?php //if (isset($_SESSION['success_addType'])): ?>
-<!--                <div class="alert-success">-->
-<!--                    --><?php //echo $_SESSION['success_addType']; ?>
-<!--                </div>-->
-<!--            --><?php //endif; ?>
+<!--
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">Khách Hàng
@@ -37,6 +28,7 @@ if (!isset($_SESSION['login_true'])) {
                         <th>Mã Khách Hàng</th>
                         <th>Tên Khách Hàng</th>
                         <th>Email</th>
+                        <th>Địa Chỉ</th>
                         <th>Số Điện Thoại</th>
                         <th>Delete</th>
                         <th>Edit</th>
@@ -49,6 +41,7 @@ if (!isset($_SESSION['login_true'])) {
                             <td><?php echo $item[1]; ?></td>
                             <td><?php echo $item[2]; ?></td>
                             <td><?php echo $item[3]; ?></td>
+                            <td><?php echo $item[4]; ?></td>
                             <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a
                                     href="<?php echo URL::uri('deleteUser'); ?>/<?= $item[0]; ?>">Delete</a></td>
                             <td class="center"><i class="fa fa-pencil fa-fw"></i> <a

@@ -30,6 +30,9 @@ class AdminConTroller
 
     public function viewAdmin()
     {
+        if(isset($_SESSION['login_true'])){
+            header('location:' . URL::uri('listProduct'));
+        }
         require_once 'views/Admin/Login/viewLogin.php';
     }
 
@@ -173,7 +176,7 @@ class AdminConTroller
 
     public function deleteType()
     {
-        $id = Request::uri()[1];
+        $id=Request::uri()[1];
         if (AdminModel::deleteType($id)) {
             header('location:' . URL::uri('listType'));
         }
@@ -202,7 +205,7 @@ class AdminConTroller
         }
     }
 
-    //User
+    //UserModel
     public function listViewUser()
     {
         require_once 'views/Admin/User/listViewUser.php';
@@ -220,6 +223,6 @@ class AdminConTroller
 
     public function deletewUser()
     {
-
+        
     }
 }

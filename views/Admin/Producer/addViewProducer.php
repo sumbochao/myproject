@@ -36,7 +36,7 @@ if (!isset($_SESSION['login_true'])) {
                         <label>Số Điện Thoại</label>
                         <input class="form-control" name="SDT" required/>
                     </div>
-                    <button type="submit" class="btn btn-default">Thêm Sản Phẩm</button>
+                    <button type="submit" class="btn btn-default">Thêm Nhà Sản Xuất</button>
                     <button type="reset" class="btn btn-default">Reset</button>
                     <form>
             </div>
