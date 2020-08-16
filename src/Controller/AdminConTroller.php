@@ -30,7 +30,7 @@ class AdminConTroller
 
     public function viewAdmin()
     {
-        if(isset($_SESSION['login_true'])){
+        if (isset($_SESSION['login_true'])) {
             header('location:' . URL::uri('listProduct'));
         }
         require_once 'views/Admin/Login/viewLogin.php';
@@ -73,6 +73,7 @@ class AdminConTroller
             $data['NSX'] = (int)$_POST['NSX'];
             $data['Loai'] = (int)$_POST['Loai'];
             if (AdminModel::updateProduct($data)) {
+                Session::set('success_updateProduct', 'San Pham Da Update thanh cong');
                 header('location:' . URL::uri('listProduct'));
             }
         }
@@ -107,6 +108,9 @@ class AdminConTroller
     {
         $id = Request::uri()[1];
         if (AdminModel::deleteProduct($id)) {
+            Session::set('delete_addProduct', 'Sản Phẩm Đã Xóa Thành Công');
+            unset($_SESSION['success_addProduct']);
+            unset($_SESSION['success_updateProduct']);
             header('location:' . URL::uri('listProduct'));
         }
     }
@@ -131,6 +135,10 @@ class AdminConTroller
     {
         $id = Request::uri()[1];
         if (AdminModel::deleteProducer($id)) {
+            Session::set('delete_Producer', 'Tên Nhà Sản Xuất Đã xóa ');
+            unset($_SESSION['success_addProducer']);
+            unset($_SESSION['error_Producer']);
+            unset($_SESSION['success_updateProducer']);
             header('location:' . URL::uri('listProducer'));
         }
     }
@@ -176,8 +184,12 @@ class AdminConTroller
 
     public function deleteType()
     {
-        $id=Request::uri()[1];
+        $id = Request::uri()[1];
         if (AdminModel::deleteType($id)) {
+            Session::set('delete_Type', 'Tên Loại Đã xóa ');
+            unset($_SESSION['success_addType']);
+            unset($_SESSION['error_addType']);
+            unset($_SESSION['success_updateType']);
             header('location:' . URL::uri('listType'));
         }
     }
@@ -221,8 +233,59 @@ class AdminConTroller
         require_once 'views/Admin/User/updateViewUser.php';
     }
 
-    public function deletewUser()
+    public function deleteUser()
     {
-        
+        $id = Request::uri()[1];
+        if (AdminModel::deleteUser($id)) {
+            Session::set('delete_User', 'Tài Khoản Đã xóa ');
+            unset($_SESSION['success_updateUser']);
+            unset($_SESSION['success_addUser']);
+            header('location:' . URL::uri('listUser'));
+        }
+
+    }
+
+    public function addUser()
+    {
+        $data = $_POST;
+        $data['password'] = md5($_POST['password']);
+        if (UserModel::isUserExists($_POST['TenKH'])[0] || UserModel::isUserExists($_POST['Email'])[0]) {
+            Session::set('error_addUser', 'Tên Tài Khoản Hoặc Email Đã Tồn Tại');
+            header('location:' . URL::uri('addUser'));
+        } else {
+            if (UserModel::insert($data)) {
+                Session::set('success_addUser', 'Tài Khoản Đã Được Tạo');
+                header('location:' . URL::uri('listUser'));
+            }
+        }
+
+    }
+
+    public function updateUser()
+    {
+        $data = $_POST;
+        if (AdminModel::updateUser($data)) {
+            Session::set('success_updateUser', 'Tài Khoản Đã UPDATE');
+            header('location:' . URL::uri('listUser'));
+        }
+    }
+
+    //admin-Order
+    public function listViewOrder()
+    {
+        require_once 'views/Admin/Order/listOrder.php';
+    }
+
+    public function deleteOrder()
+    {
+        $id = Request::uri()[1];
+        if(AdminModel::deleteOrder($id)){
+            header('location:' . URL::uri('listOrder'));
+        }
+    }
+    public function printOrder()
+    {
+        $id = Request::uri()[1];
+        require_once "views/Admin/Order/printOrder.php";
     }
 }

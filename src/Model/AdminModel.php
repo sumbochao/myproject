@@ -125,5 +125,31 @@ class AdminModel
         return DB::makeConnection()->query('SELECT * FROM khachhang');
     }
 
+    public static function selectOneUser($id)
+    {
+        return DB::makeConnection()->query("SELECT * FROM khachhang where MaKH='" . $id . "'")->fetch_assoc();
+    }
+
+    public static function updateUser($data)
+    {
+        return DB::makeConnection()->query("UPDATE khachhang SET TenKH='" . $data['TenKH'] . "', Email='" . $data['Email'] . "', DiaChi='" . $data['DiaChi'] . "',Sdt='" . $data['SDT'] . "'where MaKH='" . $data['MaKH'] . "'");
+    }
+
+    public static function deleteUser($id)
+    {
+        return DB::makeConnection()->query("DELETE FROM khachhang where MaKH='" . $id . "'");
+    }
+
+    //Order
+    public static function selectAllOrder()
+    {
+        return DB::makeConnection()->query("SELECT dh.id,kh.TenKH,kh.DiaChi,kh.Sdt,dh.created_at FROM donhang dh JOIN khachhang kh ON dh.MaKH=kh.MaKH")->fetch_all();
+    }
+
+    public static function deleteOrder($id)
+    {
+        return DB::makeConnection()->query("DELETE FROM donhang where id=".$id."");
+    }
+
 
 }

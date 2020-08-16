@@ -14,12 +14,28 @@
 <script src="./assets/admin/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
 
 <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-<script>
+<script type="text/javascript">
     $(document).ready(function() {
         $('#dataTables-example').DataTable({
             responsive: true
         });
     });
+    function hienthianh() {
+        var fileSelected=document.getElementById('upload').files;
+        console.log('fileSelected');
+        if (fileSelected.length>0){
+            var fileToLoad = fileSelected[0];
+            var fileReader = new FileReader();
+            fileReader.onload = function (fileLoaderEvent) {
+                var srcData = fileLoaderEvent.target.result;
+                var newImage= document.createElement('img');
+                newImage.src=srcData;
+                document.getElementById('displayImg').innerHTML=newImage.outerHTML;
+            }
+            fileReader.readAsDataURL(fileToLoad);
+        }
+        document.getElementById('anhcu').style.display = "none";
+    }
 </script>
 </body>
 

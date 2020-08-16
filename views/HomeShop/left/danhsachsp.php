@@ -8,7 +8,7 @@ $NSX=\MyProject\Database\DB::makeConnection()->query("select * from nhasanxuat")
         <?php
         foreach ($loaisp as $item=>$row){
             ?>
-            <li><a href="<?php ?>"</a><?php echo $row[1]; ?></a></li>
+            <li><a href="<?php echo \MyProject\Core\URL::uri('searchType').'/'.$row[0]?>"</a><?php echo $row[1]; ?></a></li>
             <?php
         }
         ?>
@@ -22,7 +22,7 @@ $NSX=\MyProject\Database\DB::makeConnection()->query("select * from nhasanxuat")
         <?php
         foreach ($NSX as $item=>$row):
         ?>
-        <li><a href="#"><?php echo $row[1];?></a></li>
+        <li><a href="<?php echo \MyProject\Core\URL::uri('searchProducer').'/'.$row[0]?>"><?php echo $row[1];?></a></li>
         <?php
         endforeach;
         ?>

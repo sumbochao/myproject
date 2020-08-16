@@ -77,18 +77,18 @@
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <div class="row">
                             <div class="col-md-6">
-                                <label>User Id</label>
+                                <label>Chức Vụ:</label>
                             </div>
                             <div class="col-md-6">
-                                <p>Vuong NoStupid</p>
+                                <p>Quản Lý Hệ Thống</p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <label>Name</label>
+                                <label>Địa Chỉ Cửa Hàng:</label>
                             </div>
                             <div class="col-md-6">
-                                <p>Lê Hùng Vương</p>
+                                <p>141 Chiến Thắng-Văn Quán-Hà Đông-Hà Nội</p>
                             </div>
                         </div>
                         <div class="row">
@@ -96,7 +96,7 @@
                                 <label>Email</label>
                             </div>
                             <div class="col-md-6">
-                                <p>vuonga7k8kma@gmail.com</p>
+                                <p>ShopKMA@gmail.com</p>
                             </div>
                         </div>
                         <div class="row">
@@ -104,15 +104,15 @@
                                 <label>Phone</label>
                             </div>
                             <div class="col-md-6">
-                                <p>113</p>
+                                <p>0888888888</p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <label>Profession</label>
+                                <label>Quan Điểm:</label>
                             </div>
                             <div class="col-md-6">
-                                <p>guess</p>
+                                <p>Khách Hàng Là Thượng Đế :vv</p>
                             </div>
                         </div>
                     </div>

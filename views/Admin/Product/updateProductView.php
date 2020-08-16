@@ -39,8 +39,9 @@ if (!isset($_SESSION['login_true'])) {
                         </div>
                         <div class="form-group">
                             <label>Images</label>
-                            <input type="file" name="Images" value="">
-                            <img src="<?php echo $values_product['Anh']; ?>" alt="" style="height: 80px;width: 80px;">
+                            <input type="file" name="Images" value="" id="upload" onchange="hienthianh()">
+                            <img src="<?php echo $values_product['Anh']; ?>" alt="" style="height: 80px;width: 80px;" id="anhcu">
+                            <div id="displayImg" class="anh"></div>
                         </div>
                         <div class="form-group">
                             <label>Nhà Sản Xuất</label>

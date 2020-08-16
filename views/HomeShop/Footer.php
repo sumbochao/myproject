@@ -4,11 +4,11 @@
     <div class="footer1">
         <ul>
             <p><i class="fas fa-clipboard-check"></i>Chính sách<hr /><p>
-            <li><a href="index.php?xem=muatragop">Tìm hiểu về mua trả góp</a></li>
-            <li><a href="index.php?xem=baohanh">Chính sách bảo hành</a></li>
-            <li><a href="index.php?xem=doitra">Chính sách đổi trả</a></li>
-            <li><a href="index.php?xem=giaotra">Giao hàng & Thanh toán</a></li>
-            <li><a href="index.php?xem=lienhe">Liên hệ</a></li>
+            <li><a href="">Tìm hiểu về mua trả góp</a></li>
+            <li><a href="">Chính sách bảo hành</a></li>
+            <li><a href="">Chính sách đổi trả</a></li>
+            <li><a href="">Giao hàng & Thanh toán</a></li>
+            <li><a href="">Liên hệ</a></li>
         </ul>
     </div>
     <div class="footer2">

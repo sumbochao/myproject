@@ -13,7 +13,21 @@ if (!isset($_SESSION['login_true'])) {
     <!-- Page Content -->
     <div id="page-wrapper">
         <div class="container-fluid">
-<!--
+            <?php if (isset($_SESSION['success_updateUser'])): ?>
+                <div class="alert-success">
+                    <?php echo $_SESSION['success_updateUser']; ?>
+                </div>
+            <?php endif; ?>
+            <?php if (isset($_SESSION['success_addUser'])): ?>
+                <div class="alert-success">
+                    <?php echo $_SESSION['success_addUser']; ?>
+                </div>
+            <?php endif; ?>
+            <?php if (isset($_SESSION['delete_User'])): ?>
+                <div class="alert-success">
+                    <?php echo $_SESSION['delete_User']; ?>
+                </div>
+            <?php endif; ?>
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">Khách Hàng
@@ -25,7 +39,7 @@ if (!isset($_SESSION['login_true'])) {
                        style="text-align: center">
                     <thead>
                     <tr align="center">
-                        <th>Mã Khách Hàng</th>
+                        <th>Mã KH</th>
                         <th>Tên Khách Hàng</th>
                         <th>Email</th>
                         <th>Địa Chỉ</th>
@@ -56,8 +70,6 @@ if (!isset($_SESSION['login_true'])) {
         <!-- /.container-fluid -->
     </div>
     <!-- /#page-wrapper -->
-
-    </div>
     <!-- /#wrapper -->
     <!-- jQuery -->
     <?php

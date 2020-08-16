@@ -23,7 +23,7 @@ require_once 'views/HomeShop/Slide.php';
                 </div>
                  <div class="phai">
                      <div class="chitietsp">
-                         <div align="center" style="color:#C00;">Chi tiết Sản Phẩm</div>
+                         <div align="center" style="color:#C00;">CHI TIẾT SẢN PHẨM</div>
                          <?php echo $ctsp['ChiTiet']; ?></div>
                      <div class="giasp">Giá Bán:<?php echo $ctsp['GiaBan']; ?> vnđ
                      </div>
@@ -44,8 +44,8 @@ require_once 'views/HomeShop/Slide.php';
             $spcungloai = \MyProject\Database\DB::makeConnection()->
             query("SELECT * FROM sanpham sp JOIN loai l on sp.MaLoai=l.MaLoai WHERE MaNSX='".$ctsp['MaNSX']."'")->fetch_all();
             ?>
-            <p style="color: #e16fdd;padding: 10px;margin-top: 28px;text-align: center;">Sản Phẩm Cùng Loại<hr/></p>
-            <div class="sanphamall">
+            <p style="color: #e16fdd;padding: 10px;margin-top: 28px;text-align: center;">Sản Phẩm Cùng Nhà Sản Xuất<hr/></p>
+            <div class="sanphamall" style="height: 758px">
                 <ul>
                     <?php
                    foreach ($spcungloai as $item=>$row) :
@@ -64,12 +64,9 @@ require_once 'views/HomeShop/Slide.php';
                     ?>
                 </ul>
             </div>
+                <br>
         </div>
-        <!-- hiện sản phẩm liên quan-->
     </div>
-    </div>
-    <div class="clear">
-
     </div>
 <?php
 require_once 'views/HomeShop/Footer.php';

@@ -18,6 +18,11 @@ if (!isset($_SESSION['login_true'])) {
                     <?php echo $_SESSION['success_updateType']; ?>
                 </div>
             <?php endif; ?>
+            <?php if (isset($_SESSION['delete_Type'])): ?>
+                <div class="alert-success">
+                    <?php echo $_SESSION['delete_Type']; ?>
+                </div>
+            <?php endif; ?>
             <?php if (isset($_SESSION['success_addType'])): ?>
                 <div class="alert-success">
                     <?php echo $_SESSION['success_addType']; ?>

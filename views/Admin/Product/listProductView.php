@@ -20,19 +20,21 @@ if (!isset($_SESSION['login_true'])) {
                         <?php echo $_SESSION['success_addProduct']; ?>
                     </div>
                 <?php endif; ?>
+                <?php if (isset($_SESSION['delete_addProduct'])): ?>
+                    <div class="alert-success">
+                        <?php echo $_SESSION['delete_addProduct']; ?>
+                    </div>
+                <?php endif; ?>
+                <?php if (isset($_SESSION['success_updateProduct'])): ?>
+                    <div class="alert-success">
+                        <?php echo $_SESSION['success_updateProduct']; ?>
+                    </div>
+                <?php endif; ?>
                 <div class="col-lg-12">
                     <h1 class="page-header">Sản Phẩm
                         <small>Danh Sách</small>
                     </h1>
                 </div>
-                <!--                --><?php //if(isset($_SESSION['error_AddProduct'])):
-                ?>
-                <!--                <div class="alert-danger">-->
-                <!--                   --><?php //echo $_SESSION['error_AddProduct'];
-                ?>
-                <!--                </div>-->
-                <!--                --><?php //endif;
-                ?>
 
                 <!-- /.col-lg-12 -->
                 <table class="table table-striped table-bordered table-hover" id="dataTables-example"

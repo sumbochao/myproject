@@ -5,7 +5,7 @@
 	margin:0px;
 }
 body{
-	font-family:Tahoma, Geneva, sans-serif;
+	font-family: 'Montserrat', sans-serif;
 }
 p{
 	font-weight:800;
@@ -223,6 +223,7 @@ p{
 	text-align: center;
 	display: block;
 	margin-right: 5px;
+	margin-bottom: 10px;
 }
 .phantrang a:hover{
 	background-color: #54ffff;
@@ -234,8 +235,9 @@ p{
 
 }
 .chitietsp{
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	padding-top: 20px;
+	text-align: center;
+	margin: 5px;
 }
 .trai{
 	width: 400px;
@@ -320,6 +322,7 @@ table,th,td{
 	text-align:center;
 	color: #2ca0cc;
 	font-weight:800;
+	margin-top: 12px;
 }
 .thongso{
 	text-align:center;
@@ -344,9 +347,9 @@ table,th,td{
 	background:#202020;
 	width:100%;
 	height:auto;
-	border-top:3px solid #f7922a;;
+	border-top:3px solid #f7922a;
 	overflow:auto;
-	margin-top:20px;
+	padding-top: 31px;
 }
 .fb-page{
 	margin-left:200px;
@@ -421,7 +424,6 @@ table,th,td{
 	color:#bbbbbb;
 }
 /*===========footer===============*/
-
 
 
 

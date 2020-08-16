@@ -4,6 +4,7 @@
 namespace MyProject\Controller;
 
 
+use MyProject\Core\Session;
 use MyProject\Core\URL;
 use MyProject\Database\DB;
 use MyProject\Model\CartModel;
@@ -57,6 +58,7 @@ class HomeShopController
                     }
                 }
             } else {
+                Session::set('isLoginCart',"Bạn Hãy Đăng Nhập Tài Khoản Để Đặt Hàng");
                 header('location:' . URL::uri('login'));
             }
         }

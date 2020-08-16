@@ -40,7 +40,8 @@ if (!isset($_SESSION['login_true'])) {
                         </div>
                         <div class="form-group">
                             <label>Images</label>
-                            <input type="file" name="Images" multiple required>
+                            <input type="file" name="Images" multiple required id="upload" onchange="hienthianh()"/>
+                            <div id="displayImg" class="anh"></div>
                         </div>
                         <div class="form-group">
                             <label>Nhà Sản Xuất</label>

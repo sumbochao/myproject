@@ -52,13 +52,21 @@ $oRoute->get('deleteType', 'MyProject\Controller\AdminController@deleteType');
 //admin-UserModel
 $oRoute->get('listUser', 'MyProject\Controller\AdminController@listViewUser');
 $oRoute->get('addUser', 'MyProject\Controller\AdminController@addViewUser');
+$oRoute->post('addUser', 'MyProject\Controller\AdminController@addUser');
 $oRoute->get('updateUser', 'MyProject\Controller\AdminController@updateViewUser');
-$oRoute->get('deleteUser', 'MyProject\Controller\AdminController@deletewUser');
+$oRoute->post('updateUser', 'MyProject\Controller\AdminController@updateUser');
+$oRoute->get('deleteUser', 'MyProject\Controller\AdminController@deleteUser');
+//admin-Order
+$oRoute->get('listOrder', 'MyProject\Controller\AdminController@listViewOrder');
+$oRoute->get('deleteOrder', 'MyProject\Controller\AdminController@deleteOrder');
+$oRoute->get('printOrder', 'MyProject\Controller\AdminController@printOrder');
 //////route SHOP
 //Chitietsp
 $oRoute->get('ctsp', 'MyProject\Controller\CTSPController@ctspView');
 //tìm kiếm
 $oRoute->post('search', 'MyProject\Controller\SearchController@searchProduct');
+$oRoute->get('searchType', 'MyProject\Controller\SearchController@searchType');
+$oRoute->get('searchProducer', 'MyProject\Controller\SearchController@searchProducer');
 //Giỏ hàng
 $oRoute->get('cart', 'MyProject\Controller\CartController@cartView');
 //xóa sp
@@ -67,4 +75,5 @@ $oRoute->post('cart', 'MyProject\Controller\CartController@cartView');
 $oRoute->post('cartaction', 'MyProject\Controller\HomeShopController@cartAction');
 //donhang
 $oRoute->get('order', 'MyProject\Controller\OrderController@orderView');
+
 

@@ -13,7 +13,7 @@ require_once 'views/HomeShop/Slide.php';
             ?>
         </div>
         <div class="right">
-            <div class="register">
+            <div class="register" style="height: 758px">
                 <?php if (isset($_SESSION['register-error'])): ?>
                     <div class="ui segment">
                         <?php echo $_SESSION['register-error']; ?>

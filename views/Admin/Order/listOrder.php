@@ -1,36 +1,22 @@
 <?php
 use MyProject\Model\AdminModel;
+use MyProject\Core\URL;
 if (!isset($_SESSION['login_true'])) {
     header('location:' . URL::uri('admin'));
 } else {
     require_once 'views/Admin/header.php';
 //<!-- Navigation -->
     require_once 'views/Admin/navigation.php';
-    $row = AdminModel::selectAllProducer()->fetch_all();
+    $row = AdminModel::selectAllOrder();
 
     ?>
     <!-- Page Content -->
     <div id="page-wrapper">
         <div class="container-fluid">
             <div class="row">
-                <?php if (isset($_SESSION['success_addProducer'])): ?>
-                    <div class="alert-success">
-                        <?php echo $_SESSION['success_addProducer']; ?>
-                    </div>
-                <?php endif; ?>
-                <?php if (isset($_SESSION['success_updateProducer'])): ?>
-                    <div class="alert-success">
-                        <?php echo $_SESSION['success_updateProducer']; ?>
-                    </div>
-                <?php endif; ?>
-                <?php if (isset($_SESSION['delete_Producer'])): ?>
-                    <div class="alert-success">
-                        <?php echo $_SESSION['delete_Producer']; ?>
-                    </div>
-                <?php endif; ?>
                 <div class="col-lg-12">
-                    <h1 class="page-header">Nhà Sản Xuất
-                        <small>List</small>
+                    <h1 class="page-header">ĐƠN HÀNG
+                        <small>Danh Sách</small>
                     </h1>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -38,12 +24,13 @@ if (!isset($_SESSION['login_true'])) {
                        style="text-align: center">
                     <thead>
                     <tr align="center">
-                        <th>MaNSX</th>
-                        <th>Tên NSX</th>
+                        <th>id</th>
+                        <th>Tên Khách Hàng</th>
                         <th>Địa Chỉ</th>
                         <th>SDT</th>
+                        <th>Ngày Tạo Đơn</th>
                         <th>Delete</th>
-                        <th>Edit</th>
+                        <th>In Đơn</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -53,11 +40,11 @@ if (!isset($_SESSION['login_true'])) {
                             <td><?php echo $item[1]; ?></td>
                             <td><?php echo $item[2]; ?></td>
                             <td><?php echo $item[3]; ?></td>
+                            <td><?php echo $item[4]; ?></td>
                             <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a
-                                        href="<?php echo \MyProject\Core\URL::uri('deleteProducer'); ?>/<?= $item[0]; ?>">
-                                    Delete</a></td>
-                            <td class="center"><i class="fa fa-pencil fa-fw"></i> <a
-                                        href="<?php echo \MyProject\Core\URL::uri('updateProducer'); ?>/<?= $item[0]; ?>">Edit</a>
+                                    href="<?php echo \MyProject\Core\URL::uri('deleteOrder'); ?>/<?= $item[0]; ?>">Delete</a></td>
+                            <td class="center"><i class="fa fa fa-print fa-fw"></i> <a
+                                    href="<?php echo \MyProject\Core\URL::uri('printOrder'); ?>/<?= $item[0]; ?>">In ĐƠN</a>
                             </td>
                         </tr>
                     <?php endforeach;

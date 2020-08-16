@@ -18,18 +18,18 @@ require_once 'views/HomeShop/Slide.php';
         <div class="right">
             <?php
             $like = $_POST['search'];
-            $search = HomeShopModel::searchproduct($like);
+            $search = HomeShopModel::searchProduct($like);
             ?>
 
             <p style="text-align:center;color:#e10c00;padding:10px">sản phẩm tìm thấy
             <hr/>
             </p>
-            <div class="sanphamall">
+            <div class="sanphamall" style="height: 800px">
                 <?php
                 if ($search[1] == 0){
                     ?>
-                    <p style="text-align:center;color:#e10c00;padding:10px">không tìm thấy sản phẩm nào
-                    <hr/></p>
+                    <p style="text-align:center;color:#56e1b2;padding:10px">không tìm thấy sản phẩm nào
+                    </p>
                     <?php
                 }else{
                 ?>

@@ -94,6 +94,13 @@
                     </ul>
                     <!-- /.nav-second-level -->
                 </li>
+                <li>
+                    <a href="<?php echo \MyProject\Core\URL::uri('listOrder');?>"><i class="fa fa-book fa-fw"></i>ĐƠN HÀNG<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="<?php echo \MyProject\Core\URL::uri('listOrder');?>">Danh Sách ĐƠN HÀNG</a>
+                        </li>
+                    </ul>
             </ul>
         </div>
         <!-- /.sidebar-collapse -->

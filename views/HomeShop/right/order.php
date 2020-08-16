@@ -2,6 +2,7 @@
 
 use MyProject\Core\Request;
 use MyProject\Database\DB;
+use MyProject\Model\OrderModel;
 
 require_once 'views/HomeShop/Header.php';
 require_once 'views/HomeShop/Menu.php';
@@ -19,11 +20,16 @@ require_once 'views/HomeShop/Slide.php';
                 <h3 style="float:right">
                     <?php
                     if (isset($_SESSION['isLogin'])) {
-                        echo 'Xin Chào:' . $_SESSION['isLogin'];
-                    }
+                    echo 'Xin Chào:' . $_SESSION['isLogin'];
                     ?>
                 </h3>
                 <?php
+                if (OrderModel::selectIdDonHang($_SESSION['isLogin']) === null) {
+                    echo "<br>";
+                    echo "Bạn Chưa Mua Sản Phẩm Nào";
+                } else {
+                    $_SESSION["order"] = OrderModel::selectIdDonHang($_SESSION['isLogin'])['id'];
+                }
                 if (isset($_SESSION["order"])) {
                     ?>
                     <form id="cart-form" action="" method="POST" style="width: 800px;">
@@ -37,10 +43,10 @@ require_once 'views/HomeShop/Slide.php';
                                 <th class="total-money">Thành tiền</th>
                             </tr>
                             <?php
-                            $id=$_SESSION["order"];
-                            $sp =\MyProject\Model\OrderModel::selectAll($id);
-                            $num=1;
-                            $sum=0;
+                            $id = $_SESSION["order"];
+                            $sp = OrderModel::selectAll($id)->fetch_all();
+                            $num = 1;
+                            $sum = 0;
                             foreach ($sp as $item => $row):?>
                                 <tr>
                                     <td class="product-number"><?= $num; ?></td>
@@ -48,11 +54,11 @@ require_once 'views/HomeShop/Slide.php';
                                     <td class="product-img"><img src="<?= $row[1] ?>"/></td>
                                     <td class="product-price"><?= $row[2] ?></td>
                                     <td class="product-quantity"><?= $row[3] ?></td>
-                                    <td class="total-money"><?=$row[4]?></td>
+                                    <td class="total-money"><?= $row[4] ?></td>
                                 </tr>
                                 <?php
                                 $num++;
-                                $sum+=$row[4];
+                                $sum += $row[4];
                             endforeach;
                             ?>
                             <tr id="row-total">
@@ -71,8 +77,9 @@ require_once 'views/HomeShop/Slide.php';
                         <div><label>Ghi chú: </label><?= $row[5] ?></div>
                     </form>
                     <?php
+                }
                 } else {
-                    echo "Chưa Mua Sản Phẩm";
+                    echo "Chưa Đăng Nhập Tài Khoản";
                 }
                 ?>
             </div>

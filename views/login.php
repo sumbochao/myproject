@@ -13,7 +13,12 @@ require_once 'views/HomeShop/Slide.php';
         ?>
     </div>
     <div class="right">
-        <div class="login1">
+        <div class="login1" style="height: 758px">
+            <?php if (isset($_SESSION['isLoginCart'])): ?>
+                <div class="ui segment" style="color: red;">
+                    <?php echo $_SESSION['isLoginCart']; ?>
+                </div>
+            <?php endif; ?>
             <?php if (isset($_SESSION['errorLogin'])): ?>
                 <div class="ui segment" style="color: red;">
                     <?php echo $_SESSION['errorLogin']; ?>
@@ -46,6 +51,7 @@ require_once 'views/HomeShop/Slide.php';
             </form>
         </div>
     </div>
+</div>
 </div>
 <?php
 require_once 'views/HomeShop/Footer.php';

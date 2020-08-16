@@ -15,7 +15,7 @@ require_once 'views/HomeShop/Slide.php';
         </div>
         <div class="right">
             <div class="cart">
-                <div align="center" style="color:#C00;">Giỏ Hàng</div>
+                <div align="center" style="color:#C00;font-size: 25px">Giỏ Hàng</div>
                 <h3 style="float:right">
                     <?php
                     if (isset($_SESSION['isLogin'])) {
